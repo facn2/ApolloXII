@@ -18,11 +18,13 @@ const handleHomeRoute = (response) => {
 
 const handlePublic = (response, url) => {
   const extension = url.split(`.`)[1];
+  console.log("The files that are called: "+ url);
   const extensionType = {
     html: "text/html",
     css: "text/ccs",
     js: "application/javascript",
-    ico: "image/x-icon"
+    ico: "image/x-icon",
+    png: "image/png"
   }
   const filePath = path.join(__dirname, `..`, url);
   fs.readFile(filePath, (error, file) => {
