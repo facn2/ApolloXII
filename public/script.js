@@ -33,11 +33,5 @@ const showResults = (resultList) => {
   results.replaceChild(foodResults, results.firstChild);
 
 
-  // console.log(resultList);
-  // resultList.forEach(function(element) {
-  //   console.log(element);
-  //   var foodNode = document.createElement('li');
-  //   foodNode.innerText = element;
-  //   results.appendChild(foodNode);
-  // })
+
 }
