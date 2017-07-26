@@ -11,6 +11,7 @@ const router = (request, response) => {
     console.log("URL:" + url);
     handlers.handlePublic(response, url)
   } else if (url.indexOf(`/?search=`) === 0) {
+    // console.log(request);
     var partialSearch = request.url.split(`search=`)[1];
     console.log(partialSearch);
     search.searchfunc(partialSearch)
