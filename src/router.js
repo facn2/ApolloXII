@@ -14,8 +14,8 @@ const router = (request, response) => {
     // console.log(request);
     var partialSearch = request.url.split(`search=`)[1];
     console.log(partialSearch);
-    search.searchfunc(partialSearch)
-
+    var resultSearch = JSON.stringify(search.searchfunc(partialSearch));
+    response.end(resultSearch)
   } else {
     response.writeHead(404)  //Header of HTTP request
     response.end(`<h1>404 File not found</h1>`)
