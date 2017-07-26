@@ -3,19 +3,17 @@ const search = require(`./search.js`)
 
 const router = (request, response) => {
   const url = request.url;
-  console.log(url.indexOf(`&submit=`));
   if (url === `/`) {
     handlers.handleHomeRoute(response)
   } else if (url.indexOf(`/public/`) === 0) {
-    console.log("URL:" + url);
+    //console.log("URL:" + url);
     handlers.handlePublic(response, url)
   } else if (url.indexOf(`&submit=`) !== -1) {
     //var actualSearch = request.url.split(`search=`)[1];
     response.writeHead(500, `Content-Type: text/html`);
-    response.end(`<h1>You still can't look for anything</h1>`)
+    response.end(`<h1>You still can't look for anything. I know you are going to raise an issue about this, but I don't care.</h1>`)
   } else if (url.indexOf(`/?search=`) === 0) {
     var partialSearch = request.url.split(`search=`)[1];
-    console.log(partialSearch);
     var resultSearch = JSON.stringify(search.searchfunc(partialSearch));
     response.end(resultSearch)
   }  else {
