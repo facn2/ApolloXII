@@ -34,6 +34,7 @@ const handlePublic = (response, url) => {
       response.end(`<h1>Sorry, something went wrong</h1>`)
     } else {
       response.writeHead(200, `Content-Type: ${extensionType[extension]}`);
+      console.log(`${extensionType[extension]}`);
       response.end(file)
     }
   })
