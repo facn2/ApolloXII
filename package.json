@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "nyc istanbul cover tape test.js | tap-spec",
-    "devStart": "nodemon src/server.js"
+    "devStart": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
