@@ -9,6 +9,8 @@ const router = (request, response) => {
   } else if (url.indexOf(`/public/`) !== -1) {
     console.log("URL:" + url);
     handlers.handlePublic(response, url)
+  } else if (true) {
+
   } else {
     response.writeHead(404)  //Header of HTTP request
     response.end(`<h1>404 File not found</h1>`)
