@@ -4,19 +4,17 @@ const router = (request, response) => {
   const url = request.url;
   console.log('URL: ', url);
 
-  switch (url) {
-    case `/`:
-      handlers.handleHomeRoute(response)
-      break;
-    case url.indexOf(`/public/`) !== -1:
-      handlers.handlePublic(response, url)
-      break;
-    default:
-      response.writeHead(404)  //Header of HTTP request
-      response.end(`<h1>404 File not found</h1>`)
-  }
+  if (url === `/`) {
+    handlers.handleHomeRoute(response)
+  } else if (url.indexOf(`/public/`) !== -1) {
+    console.log("URL:" + url);
+    handlers.handlePublic(response, url)
+  } else if (true) {
 
-  
+  } else {
+    response.writeHead(404)  //Header of HTTP request
+    response.end(`<h1>404 File not found</h1>`)
+  }
 }
 
 module.exports = router;
