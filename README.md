@@ -2,10 +2,10 @@
 
 ## Autocomplete widget for F O O D !
 
-#### Where the user can find different types of food and get information about their nutrition values.
+#### Where the user can find different types of food.
 
 ### WHY?
-Help the user to find information about nutrition value for different types of food.
+Help the user to find food names.
 
 ### WHAT?
 An autocomplete widget which gives the user different options while looking for food types/ingredients.
@@ -25,3 +25,7 @@ git clone https://github.com/facn2/ApolloXII.git
 ```javascipr
 npm install
 ```
+
+##### Go to the Heroku page
+
+https://apolloxii.herokuapp.com/
