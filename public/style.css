@@ -1,22 +1,21 @@
-html {
-  text-align: center;
-}
+
 body {
   font-family: 'Comfortaa', cursive;
   background: #D6FCDB;
-  text-align: center;
   margin-top: 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 img {
-  width: 10em;
+    width: 10em
 }
-#title-main {
-  font-size: 3em;
+h1{
   text-align: center;
 }
 form {
-  width: 50%;
-  margin: 2em auto;
+  margin: 2em;
 }
 input {
   font-size: 1.2em;
@@ -26,12 +25,14 @@ ul {
   list-style: none;
   padding: 0;
   list-style-type: none;
+  margin: 2em 10em;
+  width: 35em;
 }
-iframe {
-  width: auto;
-  height: auto;
+li {
+  padding: 0.5em;
+  background-color: #f9ffd6;
+  border: 0.1em solid black;
 }
-
 button{
 padding: 10px 15px;
 color: #fff;
@@ -39,33 +40,8 @@ background-color: #4682b4;
 border-radius: 15px;
 }
 
-#wikiAbstract, #wikiTitle {
-  width: 75%;
-  margin: 2em auto;
-  text-align: center;
-}
+
 @media screen and (max-width: 765px) {
-  #wikiAbstract, #wikiTitle {
-    width: 100%;
-    margin: 2em auto;
-    align: center;
-  }
-  #title-main {
-    width: auto;
-    margin: 1.2em auto;
-    font-size: 1.5em;
-  }
-  #sub-title {
-    font-size: 1em;
-  }
-  .iframe {
-    float: left;
-  }
-  iframe {
-    width: auto;
-    height: auto;
-    align: center;
-  }
   img {
     width: 30%;
   }
