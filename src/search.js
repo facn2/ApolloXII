@@ -12,24 +12,9 @@ const searchfunc = (partialSearch) => {
       resultArr.push(name);
       //resultObj. = JSON.stringify(name);
       counter ++;
-
-
     }
-    //  else if (name.indexOsf(partialSearch.toLowerCase()) !== -1) {
-    //   console.log(name);
-    //}
-    // else {
-    //   console.log("Sorry NOTHING!")
-    // }
   });
-
- //console.log(resultArr);
-//  console.log(resultObj);
   return resultArr;
-  // response.writeHead(200, `Content-Type: JSON`);
-  // response.end(resultArr)
 }
-
-
 
 module.exports = {searchfunc};

@@ -3,7 +3,6 @@ const search = require(`./search.js`)
 
 const router = (request, response) => {
   const url = request.url;
-  //console.log('URL: ', url);
 
   if (url === `/`) {
     handlers.handleHomeRoute(response)
@@ -11,7 +10,6 @@ const router = (request, response) => {
     console.log("URL:" + url);
     handlers.handlePublic(response, url)
   } else if (url.indexOf(`/?search=`) === 0) {
-    // console.log(request);
     var partialSearch = request.url.split(`search=`)[1];
     console.log(partialSearch);
     var resultSearch = JSON.stringify(search.searchfunc(partialSearch));
