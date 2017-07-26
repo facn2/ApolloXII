@@ -1,6 +1,6 @@
-var input = document.getElementById("search");
+var input = document.querySelector("#search");
 var searchTerm ;
-input.focus();
+var results = document.querySelector(".result");
 
 
 input.addEventListener("keyup", function(event) {
@@ -12,11 +12,23 @@ input.addEventListener("keyup", function(event) {
     var api = new XMLHttpRequest();
     api.onreadystatechange = function() {
       if (api.readyState == 4 && api.status == 200) {
-        //  var foodName = JSON.parse(api.responseText);
-        // console.log("this is working!");
-        //  linkSpace.href = userLink;
+        //console.log(api);
+        var resultList = JSON.parse(api.response);
+        showResults(resultList);
+
       };
     };
     api.open("GET", url, true);
     api.send();
+
 });
+
+const showResults = (resultList) => {
+  var foodResults = document.createElement('ul');
+  resultList.forEach(function(element){
+    var foodNode = document.createElement('li');
+    foodNode.innerText = element;
+    foodResults.appendChild(foodNode);
+  })
+  results.replaceChild(foodResults, results.firstChild);
+}
