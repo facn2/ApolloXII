@@ -31,7 +31,4 @@ const showResults = (resultList) => {
     foodResults.appendChild(foodNode);
   })
   results.replaceChild(foodResults, results.firstChild);
-
-
-
 }
