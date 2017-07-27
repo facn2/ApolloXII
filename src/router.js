@@ -6,12 +6,15 @@ const router = (request, response) => {
   if (url === `/`) {
     handlers.handleHomeRoute(response)
   } else if (url.indexOf(`/public/`) === 0) {
-    //console.log("URL:" + url);
     handlers.handlePublic(response, url)
   } else if (url.indexOf(`&submit=`) !== -1) {
-    //var actualSearch = request.url.split(`search=`)[1];
-    response.writeHead(500, `Content-Type: text/html`);
-    response.end(`<h1>You still can't look for anything. I know you are going to raise an issue about this, but I don't care.</h1>`)
+
+    const finalSearchSubmit = request.url.split(`search=`)[1];
+    const finalSearch = finalSearchSubmit.split(`&submit`)[0];
+    console.log("Search:"+finalSearch);
+    var finalResult = JSON.stringify(search.finalSearchFunc(finalSearch));
+    response.writeHead(200, {"Location": "../"});
+    response.end(`<h1>You looked for: </h1>` + finalResult)
   } else if (url.indexOf(`/?search=`) === 0) {
     var partialSearch = request.url.split(`search=`)[1];
     var resultSearch = JSON.stringify(search.searchfunc(partialSearch));

@@ -2,9 +2,9 @@ const food = require(`./food.json`);
 
 const searchfunc = (partialSearch) => {
   //console.log("We are looking for: " + partialSearch);
-  var resultArr = [];
-  var resultObj = {};
-  var counter = 0;
+  let resultArr = [];
+  // var resultObj = {};
+  let counter = 0;
   food.forEach(function(obj) {
     let name = obj.nm.toLowerCase();
     if ((name.indexOf(partialSearch.toLowerCase()) === 0) && counter < 10 ) {
@@ -17,4 +17,25 @@ const searchfunc = (partialSearch) => {
   return resultArr;
 }
 
-module.exports = {searchfunc};
+const finalSearchFunc = (finalSearch) => {
+  //console.log("We are looking for: " + partialSearch);
+  let finalResultArr = [];
+  // var resultObj = {};
+  let counter = 0;
+  food.forEach(function(obj) {
+    let name = obj.nm.toLowerCase();
+    if ((name.indexOf(finalSearch.toLowerCase()) === 0) && counter < 1 ) {
+      //console.log(JSON.stringify(obj));
+      finalResultArr.push(obj);
+      //resultObj. = JSON.stringify(name);
+      counter++;
+    }
+  });
+  console.log(finalResultArr);
+  return finalResultArr;
+}
+
+module.exports = {
+  searchfunc,
+  finalSearchFunc
+};
