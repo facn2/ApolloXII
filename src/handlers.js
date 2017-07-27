@@ -3,10 +3,8 @@ const path = require('path');
 
 const handleHomeRoute = (response) => {
   const filePath = path.join(__dirname, `..`, `public`, `index.html`);
-  //console.log("The filepath is: " + filePath);
   fs.readFile(filePath, (error, file) => {
     if(error) {
-      //console.log(error);
       response.writeHead(500, `Content-Type: text/html`);
       response.end(`<h1>Sorry, something on our server broke</h1>`)
     } else {
@@ -18,7 +16,6 @@ const handleHomeRoute = (response) => {
 
 const handlePublic = (response, url) => {
   const extension = url.split(`.`)[1];
-  //console.log("The files that are called: "+ url);
   const extensionType = {
     html: "text/html",
     css: "text/ccs",
@@ -29,12 +26,10 @@ const handlePublic = (response, url) => {
   const filePath = path.join(__dirname, `..`, url);
   fs.readFile(filePath, (error, file) => {
     if(error) {
-      //console.log(error);
       response.writeHead(500, `Content-Type: text/html`);
       response.end(`<h1>Sorry, something went wrong</h1>`)
     } else {
       response.writeHead(200, `Content-Type: ${extensionType[extension]}`);
-      //console.log(`${extensionType[extension]}`);
       response.end(file)
     }
   })
