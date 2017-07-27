@@ -21,14 +21,13 @@ input {
   font-size: 1.2em;
   font-family: 'Comfortaa', cursive;
 }
-ul {
-  list-style: none;
+datalist {
+  display: block;
   padding: 0;
-  list-style-type: none;
   margin: 2em 10em;
   width: 35em;
 }
-li {
+option {
   padding: 0.5em;
   background-color: #f9ffd6;
   border: 0.1em solid black;
@@ -39,7 +38,9 @@ color: #fff;
 background-color: #4682b4;
 border-radius: 15px;
 }
-
+.result {
+  display: none;
+}
 
 @media screen and (max-width: 765px) {
   img {
