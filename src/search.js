@@ -26,7 +26,7 @@ const finalSearchFunc = (request) => {
       counter++;
     }
   });
-  
+
   return JSON.stringify(finalResultArr);
 }
 
