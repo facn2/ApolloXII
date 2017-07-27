@@ -24,10 +24,11 @@ input.addEventListener("keyup", function(event) {
 });
 
 const showResults = (resultList, searchTerm) => {
-  var foodResults = document.createElement('ul');
+  var foodResults = document.createElement('datalist');
+  foodResults.setAttribute("id", "foodItems");
   if (searchTerm.length !== 0) {
     resultList.forEach(function(element){
-      var foodNode = document.createElement('li');
+      var foodNode = document.createElement('option');
       foodNode.innerText = element;
       foodResults.appendChild(foodNode);
     });
