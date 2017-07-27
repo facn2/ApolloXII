@@ -8,11 +8,9 @@ const router = (request, response) => {
   } else if (url.indexOf(`/public/`) === 0) {
     handlers.handlePublic(response, url)
   } else if (url.indexOf(`&submit=`) !== -1) {
-    var finalResult = search.finalSearchFunc(request);
-    response.writeHead(200, {"Location": "../"});
-    response.end(`<h1>You looked for: </h1>` + finalResult)
+    search.finalSearchFunc(request, response);
   } else if (url.indexOf(`/?search=`) === 0) {
-    response.end(JSON.stringify(search.searchfunc(request)))
+    search.searchfunc(request, response)
   }  else {
     response.writeHead(404)  //Header of HTTP request
     response.end(`<h1>404 File not found</h1>`)
