@@ -1,6 +1,7 @@
 const food = require(`./food.json`);
 
-const searchfunc = (partialSearch) => {
+const searchfunc = (request) => {
+  var partialSearch = request.url.split(`search=`)[1];
   let resultArr = [];
   let counter = 0;
   food.forEach(function(obj) {
@@ -13,7 +14,9 @@ const searchfunc = (partialSearch) => {
   return resultArr;
 }
 
-const finalSearchFunc = (finalSearch) => {
+const finalSearchFunc = (request) => {
+  const finalSearchSubmit = request.url.split(`search=`)[1];
+  const finalSearch = finalSearchSubmit.split(`&submit`)[0];
   let finalResultArr = [];
   let counter = 0;
   food.forEach(function(obj) {
@@ -23,7 +26,8 @@ const finalSearchFunc = (finalSearch) => {
       counter++;
     }
   });
-  return finalResultArr;
+  
+  return JSON.stringify(finalResultArr);
 }
 
 module.exports = {
